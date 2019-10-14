@@ -1,5 +1,9 @@
 # Created by https://www.gitignore.io
 
+
+# db config file
+/production-config.js
+
 ### Node ###
 # Logs
 logs
