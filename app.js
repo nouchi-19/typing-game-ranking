@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const productionConfig = require('./production-config');
 
-mongoose.connect('mongodb://localhost:27017/testdb', { useUnifiedTopology: true, useNewUrlParser: true,useCreateIndex: true });
+mongoose.connect(productionConfig.cloud.url, { useUnifiedTopology: true, useNewUrlParser: true,useCreateIndex: true });
 mongoose.connection.on('error', (err) => {
     console.error('MongoDB connection error: ' + err);
     process.exit(-1);
